@@ -31,29 +31,34 @@ var resource = [];
 var textMap = {};
 
 var convert = {
+
     /**
-     * @param {{text: string, class: string, url:string, code:?string }[]} list
+     * @param {Array.<{text: string, class: string, url:string, ?code:string }>} args[i]
      */
-    extend(list) {
+    extend(...args) {
 
-        if (!Array.isArray(list)) return;
+        args.forEach(function (list) {
 
-        list.forEach(function (item) {
-            var code = item.code;
-            if (code == null) return;
+            if (!Array.isArray(list)) return;
 
-            if (typeof code === 'string') {
-                item.reg = new RegExp(code, 'g');
-            }
-            else {
-                item.code = null;
-                throw new Error(JSON.stringify(item) + ': code muse be String')
-            }
+            list.forEach(function (item) {
 
-            textMap[item.text] = item;
+                var code = item.code;
+                if (code == null) return;
+
+                if (typeof code === 'string') {
+                    item.reg = new RegExp(code, 'g');
+                }
+                else {
+                    item.code = null;
+                    throw new Error(JSON.stringify(item) + ': code muse be String')
+                }
+
+                textMap[item.text] = item;
+            });
+
+            resource = resource.concat(list);
         });
-
-        resource = resource.concat(list);
 
     },
 
@@ -77,15 +82,15 @@ var convert = {
      * @param {string} msg
      * @returns {string}
      */
-    toText(msg){
+    toText(msg) {
         msg = validStr(msg);
         if (!msg) return msg;
 
         //unicode
         resource.forEach(function (item) {
-            if(!item.code) return;
+            if (!item.code) return;
 
-            msg=msg.replace(item.reg,'['+item.text+']');
+            msg = msg.replace(item.reg, '[' + item.text + ']');
         })
 
         return msg;
@@ -103,18 +108,18 @@ var convert = {
         var item;
         msg = msg.replace(emojiTxtReg, function (match, text) {
             item = textMap[text];
-            if(item) return getImgHtml(item.class,item.url,item.text);
+            if (item) return getImgHtml(item.class, item.url, item.text);
             else return match
         });
 
-        if(passU) return;
+        if (passU) return;
 
         //unicode
         resource.forEach(function (item) {
-            if(!item.code) return;
+            if (!item.code) return;
 
-            msg=msg.replace(item.reg, function () {
-                return getImgHtml(item.class,item.url,item.text);
+            msg = msg.replace(item.reg, function () {
+                return getImgHtml(item.class, item.url, item.text);
             })
 
         })
