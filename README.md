@@ -9,7 +9,7 @@ emoji表情的转换。
 
 # 下载
 * npm: `npm install --save emoji-convert`
-* 直接下载: \<script src="http://wangwl.net/static/demo/emoji-convert/index.js"></script\>
+* 直接下载: `http://wangwl.net/static/demo/emoji-convert/index.js`
 
 
 # 使用
