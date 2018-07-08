@@ -13,11 +13,11 @@ emoji表情的转换。
 
 
 # 使用
-* es2015: `import utils from "emoji-convert"`
-* commonjs: `var utils = require("emoji-convert")`
-* amd: `define( ["/js/emoji-convert.js"] , (utils)=>{ /*...*/ } )`
-* window.utils: `<script src="http://wangwl.net/static/demo/emoji-convert/index.js"></script>`
-* self.utils: `importScripts("./emoji-convert.js")`
+* es2015: `import convert from "emoji-convert"`
+* commonjs: `var convert = require("emoji-convert")`
+* amd: `define( ["/js/emoji-convert.js"] , (convert)=>{ /*...*/ } )`
+* window.emojiConvert: `<script src="http://wangwl.net/static/demo/emoji-convert/index.js"></script>`
+* self.emojiConvert: `importScripts("./emoji-convert.js")`
 
 # demo
 [http://wangwl.net/static/demo/emoji-convert/index.html](http://wangwl.net/static/demo/emoji-convert/index.html)
