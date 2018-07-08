@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>emoji-convert</title>
+</head>
+<body>
+
+<pre>
+    var list = [
+        {
+            text: "测试亲吻表情",
+            class: "emoji-qinwen",
+            url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABEtJREFUeNqsVFtMXGUQ/s6eszd2y0JY2XLvQi2lKIgilIJNqxWaUiKpNhZ5aKKmgtGExgdRH4yJaWLTpFVjLA9NE9PUEltUGiqRXrRcUi2ltmIF2lIr12V3YW+w13PG2cUai5f64J/Mnn//MzPn+775ZwQiwv+5hKUH9QU6HNkWD8eMHwRvsaTDFrb17KmNBHBeDqATiqHbvNyAVzq8+Oh7/13x0l8+EWJT5rYZc8QWKb/aLKU/Chgt/GkV4JupkKevvBke/NoNl72ZQrqD94R8fida6UwB0dwXRMo4kWwnCk8umjzDZ9NE7lNEvRX0QyM6pX9LdrweLfRTOVGgn6WdJMXWRjTdTmQ7+bu1L5pngMh3iej6Zup/TTj95xzinc0b5WLDq++sfBuF72FiZAh7dtUjOT0Ly3OMTHUWkH2LRvMsyyTvA4C+EKlrbmdLw7b5c6PUd1dRpj9IGLXUPW2dmcjG3uY9qN5ei43V6wC/gzVlN4Vvg44Jirz3sdAp8RyVBNh6gN4TC6kvzKZMReCJSfBUnrTJsjbZCkWDo4da8czzNVi7vYCdrzEiTrAQBuIkzDvCOPrZj3DNOBAJhbG1phgPlnHBHkmLq3/MX7/vnP9jMVEF3XMVhrrymvQN5AxgZaEVuWtUCF4ZwP59PTAb3DCnMT33FIQ4L7KtBmx6MgMmo4Jro3Y8kM2qaYLw3/S6j130t0nJ8chOM6vzIeogUAD3Sb8yIhWu357F4NkppCYCuesSY7TPHB9B/3eT0OlEbH42DzsasoARO2BSI8WsWb14DwWBjZ8K05L5rgVlpqnCCqseRY8n4aESM+vICPlVWK9C6ROZWGAJHbMLgMfJVVA4jg0Uk09y+mhsek6+AZkdom0YdQgrMJpENL6VCS3/l91OeF0RbN1lhqDmzM4ISMuFvDyD5BQdVHrez8uD0YQq1nmudzjQhyAjVDM6TYSfnJQRaxVuKyEElQGY9IbQeuAXDLVPMcUQuj8cR1PlMHpP2jhGRluXxxZLGP3puBrs9Az6vTAxag2LLPFxFIkgxOgL8RJWFRrhmohg9MJ8rA1vdHnwEocLn0bQVjuGkqHg7iaT0BhLGAQCew/b90Nkyno1YOCk+mj1+LWWkyaI6DrrgcYdwZZKE8AkVm80wqjWoMyYiGq/AS+v0mAqQkl/dEr3aPib9TpUWSsTMiALiz2kEhYtSLi/bBm++taDWz8HUFiVAGOxCe4eF9LsPvjVQTSPBTsOealh6fjS9jUnXyrbnZIfmy5BJTaPiIt0tc8LtTOM3DwDxByuQqYGp5tuOU+87xj4XIXXbQou/+OQeLfKeJBO5RBNFPIgeJhotoiHAu9tPIUG88lxZAW11Jm+ZHH09xywd9YyAak7SvQ7NxTFVaRa1GmiCHHcFpl02MIXR8dDhw9c8N/8TxN76WIIFoseWUESxNIM9diLpfrxCOta+4nrb/1/E2AAFhrlajslR4sAAAAASUVORK5CYII=",
+            code: "\u{1f618}"
+        }
+    ]
+
+    emojiConvert.extend(list);
+    emojiConvert.extend(emojiConvertResourceBase);
+
+    var msg = '哈哈[大笑]，亲亲[测试亲吻表情]';
+
+</pre>
+
+<hr />
+
+<div>
+    emojiConvert.toUnicode(msg):
+    <div id="toUnicode"></div>
+</div>
+
+<br/>
+
+<div>
+    emojiConvert.toHtml(msg):
+    <div id="toHtml2"></div>
+    <div id="toHtml"></div>
+</div>
+
+<br/>
+
+<div>
+    emojiConvert.toText("😃"):
+    <div id="toText"></div>
+</div>
+
+
+<script src="./index.js"></script>
+<script src="./resource.js"></script>
+<script>
+
+    var list = [
+        {
+            text: "测试亲吻表情",
+            class: "emoji-qinwen",
+            url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABEtJREFUeNqsVFtMXGUQ/s6eszd2y0JY2XLvQi2lKIgilIJNqxWaUiKpNhZ5aKKmgtGExgdRH4yJaWLTpFVjLA9NE9PUEltUGiqRXrRcUi2ltmIF2lIr12V3YW+w13PG2cUai5f64J/Mnn//MzPn+775ZwQiwv+5hKUH9QU6HNkWD8eMHwRvsaTDFrb17KmNBHBeDqATiqHbvNyAVzq8+Oh7/13x0l8+EWJT5rYZc8QWKb/aLKU/Chgt/GkV4JupkKevvBke/NoNl72ZQrqD94R8fida6UwB0dwXRMo4kWwnCk8umjzDZ9NE7lNEvRX0QyM6pX9LdrweLfRTOVGgn6WdJMXWRjTdTmQ7+bu1L5pngMh3iej6Zup/TTj95xzinc0b5WLDq++sfBuF72FiZAh7dtUjOT0Ly3OMTHUWkH2LRvMsyyTvA4C+EKlrbmdLw7b5c6PUd1dRpj9IGLXUPW2dmcjG3uY9qN5ei43V6wC/gzVlN4Vvg44Jirz3sdAp8RyVBNh6gN4TC6kvzKZMReCJSfBUnrTJsjbZCkWDo4da8czzNVi7vYCdrzEiTrAQBuIkzDvCOPrZj3DNOBAJhbG1phgPlnHBHkmLq3/MX7/vnP9jMVEF3XMVhrrymvQN5AxgZaEVuWtUCF4ZwP59PTAb3DCnMT33FIQ4L7KtBmx6MgMmo4Jro3Y8kM2qaYLw3/S6j130t0nJ8chOM6vzIeogUAD3Sb8yIhWu357F4NkppCYCuesSY7TPHB9B/3eT0OlEbH42DzsasoARO2BSI8WsWb14DwWBjZ8K05L5rgVlpqnCCqseRY8n4aESM+vICPlVWK9C6ROZWGAJHbMLgMfJVVA4jg0Uk09y+mhsek6+AZkdom0YdQgrMJpENL6VCS3/l91OeF0RbN1lhqDmzM4ISMuFvDyD5BQdVHrez8uD0YQq1nmudzjQhyAjVDM6TYSfnJQRaxVuKyEElQGY9IbQeuAXDLVPMcUQuj8cR1PlMHpP2jhGRluXxxZLGP3puBrs9Az6vTAxag2LLPFxFIkgxOgL8RJWFRrhmohg9MJ8rA1vdHnwEocLn0bQVjuGkqHg7iaT0BhLGAQCew/b90Nkyno1YOCk+mj1+LWWkyaI6DrrgcYdwZZKE8AkVm80wqjWoMyYiGq/AS+v0mAqQkl/dEr3aPib9TpUWSsTMiALiz2kEhYtSLi/bBm++taDWz8HUFiVAGOxCe4eF9LsPvjVQTSPBTsOealh6fjS9jUnXyrbnZIfmy5BJTaPiIt0tc8LtTOM3DwDxByuQqYGp5tuOU+87xj4XIXXbQou/+OQeLfKeJBO5RBNFPIgeJhotoiHAu9tPIUG88lxZAW11Jm+ZHH09xywd9YyAak7SvQ7NxTFVaRa1GmiCHHcFpl02MIXR8dDhw9c8N/8TxN76WIIFoseWUESxNIM9diLpfrxCOta+4nrb/1/E2AAFhrlajslR4sAAAAASUVORK5CYII=",
+            code: "\u{1f618}"
+        }
+    ]
+
+    emojiConvert.extend(list);
+    emojiConvert.extend(emojiConvertResourceBase);
+
+    var msg = '哈哈[大笑]，亲亲[测试亲吻表情]';
+
+    document.querySelector('#toUnicode').innerHTML = emojiConvert.toUnicode(msg);
+    document.querySelector('#toHtml').innerText = emojiConvert.toHtml(msg);
+    document.querySelector('#toHtml2').innerHTML = emojiConvert.toHtml(msg);
+    document.querySelector('#toText').innerHTML = emojiConvert.toText('😃');
+
+</script>
+
+</body>
+</html>
